@@ -129,7 +129,7 @@
                 "${env:IDF_PATH}/components/wpa_supplicant/include/wpa2/tls",
                 "${env:IDF_PATH}/components/wpa_supplicant/include/wpa2/utils",
                 "${env:IDF_PATH}/components/xtensa-debug-module/include",
-                "/Users/js/esp/xtensa-esp32-elf/xtensa-esp32-elf/include"
+                "${env:IDF_PATH}/../xtensa-esp32-elf/xtensa-esp32-elf/include"
             ],
             "intelliSenseMode": "clang-x64",
             "browse": {
@@ -257,7 +257,7 @@
                     "${env:IDF_PATH}/components/wpa_supplicant/include/wpa2/tls",
                     "${env:IDF_PATH}/components/wpa_supplicant/include/wpa2/utils",
                     "${env:IDF_PATH}/components/xtensa-debug-module/include",
-                    "/Users/js/esp/xtensa-esp32-elf/xtensa-esp32-elf/include"
+                    "${env:IDF_PATH}/../xtensa-esp32-elf/xtensa-esp32-elf/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": "${workspaceRoot}/.vscode/browse.vc.db"
