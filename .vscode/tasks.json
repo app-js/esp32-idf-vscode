@@ -1,0 +1,97 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "esp32-idf build",
+            "command": "idf.py",
+            "type": "shell",
+            "args": [
+                "build"
+            ],
+            "presentation": {
+            },
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        {
+            "label": "esp32-idf clean",
+            "command": "idf.py",
+            "type": "shell",
+            "args": [
+                "clean"
+            ],
+            "presentation": {
+            },
+        },
+        {
+            "label": "esp32-idf flash",
+            "command": "idf.py",
+            "type": "shell",
+            "args": [
+                "-p","/dev/cu.SLAB_USBtoUART","flash"
+            ],
+            "windows": {
+                "args": [
+                    "-p","COM9","flash"
+                ]
+            },
+            "presentation": {
+            },
+        },
+        {
+            "label": "esp32-idf flash monitor",
+            "command": "idf.py",
+            "type": "shell",
+            "args": [
+                "-p","/dev/cu.SLAB_USBtoUART","flash","monitor"
+            ],
+            "windows": {
+                "args": [
+                    "-p","COM9","flash","monitor"
+                ]
+            },
+            "presentation": {
+            },
+        },
+       {
+            "label": "esp32-idf monitor",
+            "type": "shell",
+            "command": "idf.py",
+            "args": [
+                "-p","/dev/cu.SLAB_USBtoUART","monitor"
+            ],
+            "windows": {
+                "command": "idf.py",
+                "args": [
+                    "monitor"
+                ]
+            },
+            "presentation": {
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "esp32-idf menuconfig",
+            "type":"shell",
+            "command": "idf.py",
+            "args": [
+                "menuconfig"
+            ],
+            "presentation": {
+            },
+            "problemMatcher": []
+        }
+    ]
+}
