@@ -22,6 +22,11 @@
     {
         "key": "f9",
         "command": "workbench.action.tasks.runTask",
+        "args": "esp32-idf flash monitor"
+    },
+    {
+        "key": "f10",
+        "command": "workbench.action.tasks.runTask",
         "args": "esp32-idf menuconfig"
     }
 ]
