@@ -64,6 +64,7 @@
             },
             "presentation": {
             },
+            "problemMatcher": []
         },
        {
             "label": "esp32-idf monitor",
