@@ -34,6 +34,18 @@
             ],
             "presentation": {
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "esp32-idf fullclean",
+            "command": "idf.py",
+            "type": "shell",
+            "args": [
+                "fullclean"
+            ],
+            "presentation": {
+            },
+            "problemMatcher": []
         },
         {
             "label": "esp32-idf flash",
@@ -44,11 +56,12 @@
             ],
             "windows": {
                 "args": [
-                    "-p","COM9","flash"
+                    "-p","COM12","flash"
                 ]
             },
             "presentation": {
             },
+            "problemMatcher": []
         },
         {
             "label": "esp32-idf flash monitor",
@@ -59,7 +72,7 @@
             ],
             "windows": {
                 "args": [
-                    "-p","COM9","flash","monitor"
+                    "-p","COM12","flash","monitor"
                 ]
             },
             "presentation": {
@@ -93,6 +106,18 @@
             "presentation": {
             },
             "problemMatcher": []
+        },
+        {
+            "label": "esp32-idf erase_flash",
+            "type":"shell",
+            "command": "idf.py",
+            "args": [
+                "erase_flash"
+            ],
+            "presentation": {
+            },
+            "problemMatcher": []
         }
+
     ]
 }
