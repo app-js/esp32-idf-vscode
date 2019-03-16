@@ -1,0 +1,33 @@
+
+1. Install Xcode
+2. Install XCode command line tools: xcode-select --install
+3. Install HomeBrew: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+4. sudo easy_install pip
+5. pip install --user pyserial
+6. brew install cmake ninja
+7. brew install ccache
+
+8. Download https://dl.espressif.com/dl/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz into ~/Downloads
+9. mkdir -p ~/esp
+10. cd ~/esp
+11. tar -xzf ~/Downloads/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz
+
+12. Open or create: ~/.profile or .bash_profile
+13. Add the line: export PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH
+14. Log off, log in back and check PATH with: printenv PATH
+
+15. cd ~/esp
+16. git clone --recursive https://github.com/espressif/esp-idf.git
+17. Add into ~/.profile or .bash_profile: export IDF_PATH=~/esp/esp-idf
+18. Add into ~/.profile or .bash_profile: export PATH="$IDF_PATH/tools:$PATH"
+19. Log off, log in back and check with: printenv
+20. Check Python with (Must be version 2.7.x): python --version
+21. python -m pip install --user -r $IDF_PATH/requirements.txt
+22. Install failed python libs (nose, tornado) with python -m pip install --user XXX
+
+23. Install Visual Studio Code
+24. Install Extension C/C++ (vscode-cpptools) (Version greater than 0.22.0-insiders3)
+25. https://github.com/Microsoft/vscode-cpptools/releases
+26. Install VSXI in VSCode
+27. Set the "C_Cpp.updateChannel" setting to "Insiders"
