@@ -21,7 +21,7 @@
 
 - tar -xzf ~/Downloads/xtensa-esp32-elf-osx-1.22.0-80-g6c4433a-5.2.0.tar.gz
 
-- Open ~/.profile or ~/.bash_profile and add line:
+- Open/create ~/.profile or ~/.bash_profile and add line:
   - export PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH
 
 - Log off, log in back and check PATH with: printenv PATH
@@ -30,7 +30,7 @@
 
 - git clone --recursive https://github.com/espressif/esp-idf.git
 
-- Open/create ~/.profile or ~/.bash_profile and add lines:
+- Open ~/.profile or ~/.bash_profile and add lines:
   - export IDF_PATH=~/esp/esp-idf
   - export PATH="$IDF_PATH/tools:$PATH"
 
