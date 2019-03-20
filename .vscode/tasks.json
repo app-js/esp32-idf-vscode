@@ -10,8 +10,7 @@
             "args": [
                 "build"
             ],
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": {
                 "owner": "cpp",
                 "fileLocation": "absolute",
@@ -23,6 +22,10 @@
                     "severity": 4,
                     "message": 5
                 }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
             }
         },
         {
@@ -32,8 +35,7 @@
             "args": [
                 "clean"
             ],
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
         {
@@ -43,8 +45,7 @@
             "args": [
                 "fullclean"
             ],
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
         {
@@ -52,15 +53,19 @@
             "command": "idf.py",
             "type": "shell",
             "args": [
-                "-p","/dev/cu.SLAB_USBtoUART","flash"
+                "-p",
+                "/dev/cu.SLAB_USBtoUART",
+                "flash"
             ],
             "windows": {
                 "args": [
-                    "-p","COM12","flash"
+                    "-p",
+                    "COM9",
+                    // "COM12",
+                    "flash"
                 ]
             },
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
         {
@@ -68,23 +73,31 @@
             "command": "idf.py",
             "type": "shell",
             "args": [
-                "-p","/dev/cu.SLAB_USBtoUART","flash","monitor"
+                "-p",
+                "/dev/cu.SLAB_USBtoUART",
+                "flash",
+                "monitor"
             ],
             "windows": {
                 "args": [
-                    "-p","COM12","flash","monitor"
+                    "-p",
+                    "COM9",
+                    // "COM12",
+                    "flash",
+                    "monitor"
                 ]
             },
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
-       {
+        {
             "label": "esp32-idf monitor",
             "type": "shell",
             "command": "idf.py",
             "args": [
-                "-p","/dev/cu.SLAB_USBtoUART","monitor"
+                "-p",
+                "/dev/cu.SLAB_USBtoUART",
+                "monitor"
             ],
             "windows": {
                 "command": "idf.py",
@@ -92,30 +105,56 @@
                     "monitor"
                 ]
             },
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
         {
             "label": "esp32-idf menuconfig",
-            "type":"shell",
+            "type": "shell",
             "command": "idf.py",
             "args": [
                 "menuconfig"
             ],
-            "presentation": {
-            },
+            "presentation": {},
             "problemMatcher": []
         },
         {
             "label": "esp32-idf erase_flash",
-            "type":"shell",
+            "type": "shell",
             "command": "idf.py",
             "args": [
                 "erase_flash"
             ],
-            "presentation": {
+            "presentation": {},
+            "problemMatcher": []
+        },
+        {
+            "label": "esp32-idf spiffs build",
+            "type": "shell",
+            "command": "$IDF_PATH/../mkspiffs",
+            "windows": {
+                "command": "%IDF_PATH%/../mkspiffs",
             },
+            "args": [
+                "-c ./data",
+                "-b 4096",
+                "-p 256",
+                "-s 0x16F000",
+                "./build/spiffs.bin"
+            ],
+            "presentation": {},
+            "problemMatcher": []
+        },
+        {
+            "label": "esp32-idf spiffs flash",
+            "type": "shell",
+            "command": "$IDF_PATH/components/esptool_py/esptool/esptool.py --chip esp32 --port /dev/cu.SLAB_USBtoUART --baud 460800 write_flash -z 0x291000 ./build/spiffs.bin",
+            "windows": {
+                "command": "%IDF_PATH%/components/esptool_py/esptool/esptool.py --chip esp32 --port COM9 --baud 460800 write_flash -z 0x291000 ./build/spiffs.bin",
+                // "command": "%IDF_PATH%/components/esptool_py/esptool/esptool.py --chip esp32 --port COM12 --baud 460800 write_flash -z 0x291000 ./build/spiffs.bin",
+           },
+            "args": [],
+            "presentation": {},
             "problemMatcher": []
         }
 
